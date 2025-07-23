@@ -41,7 +41,7 @@ fun ToDoList(modifier: Modifier = Modifier, viewModel : AuthViewModel) {
 	Column(
 		modifier = Modifier
 			.fillMaxHeight()
-			.padding(8.dp,top = 50.dp)
+			.padding(8.dp, top = 50.dp)
 	) {
 		Row(
 			modifier = Modifier
@@ -118,5 +118,10 @@ fun ListView(item: ToDo , onDelete : () -> Unit) {
 			)
 		}
 	}
+
+}
+
+@Composable
+ fun room (modifier: Modifier = Modifier) {
 
 }
