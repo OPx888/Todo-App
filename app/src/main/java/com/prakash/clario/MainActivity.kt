@@ -26,3 +26,8 @@ class MainActivity : ComponentActivity() {
 		}
 	}
 }
+
+@Composable
+fun image (modifier: Modifier = Modifier) {
+	
+}
