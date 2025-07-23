@@ -30,12 +30,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.prakash.clario.authview.AuthViewModel
+import com.prakash.clario.authview.TodoViewModel
+import com.prakash.clario.navigation.AuthViewModel
 import java.text.SimpleDateFormat
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
-fun ToDoList(modifier: Modifier = Modifier, viewModel : AuthViewModel) {
+fun ToDoList(modifier: Modifier = Modifier, viewModel: TodoViewModel, authViewModel: AuthViewModel) {
 	val list by viewModel.todo.observeAsState()
 	var task by remember { mutableStateOf("") }
 	Column(
@@ -49,7 +50,7 @@ fun ToDoList(modifier: Modifier = Modifier, viewModel : AuthViewModel) {
 				.padding(8.dp),
 			horizontalArrangement = Arrangement.spacedBy(8.dp),
 			verticalAlignment = Alignment.CenterVertically
-		){
+		) {
 			OutlinedTextField(
 				value = task,
 				onValueChange = { task = it },
@@ -66,11 +67,11 @@ fun ToDoList(modifier: Modifier = Modifier, viewModel : AuthViewModel) {
 			}
 
 		}
-		list?.let{
+		list?.let {
 			LazyColumn(
 				content = {
 					itemsIndexed(it) { index, item ->
-						ListView(item = item, onDelete = { viewModel.deleteToDo(id = item.id ) })
+						ListView(item = item, onDelete = { viewModel.deleteToDo(id = item.id) })
 					}
 				}
 			)
@@ -81,7 +82,7 @@ fun ToDoList(modifier: Modifier = Modifier, viewModel : AuthViewModel) {
 }
 
 @Composable
-fun ListView(item: ToDo , onDelete : () -> Unit) {
+fun ListView(item: ToDo, onDelete: () -> Unit) {
 	Row(
 		modifier = Modifier
 			.fillMaxWidth()
@@ -118,10 +119,5 @@ fun ListView(item: ToDo , onDelete : () -> Unit) {
 			)
 		}
 	}
-
-}
-
-@Composable
- fun room (modifier: Modifier = Modifier) {
 
 }

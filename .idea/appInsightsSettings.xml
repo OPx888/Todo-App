@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.prakash.clario" />
+                  <option name="mobileSdkAppId" value="1:596865639535:android:b1e6c7d5fa4a03a315d99a" />
+                  <option name="projectId" value="clario-91c9e" />
+                  <option name="projectNumber" value="596865639535" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

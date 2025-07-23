@@ -2,6 +2,8 @@ plugins {
 	alias(libs.plugins.android.application)
 	alias(libs.plugins.kotlin.android)
 	alias(libs.plugins.kotlin.compose)
+	id("com.google.devtools.ksp")
+	alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -49,6 +51,10 @@ dependencies {
 	implementation(libs.androidx.ui.graphics)
 	implementation(libs.androidx.ui.tooling.preview)
 	implementation(libs.androidx.material3)
+	implementation(libs.androidx.room.common.jvm)
+	implementation(libs.androidx.navigation.compose.jvmstubs)
+	implementation(libs.firebase.auth)
+	implementation(libs.firebase.crashlytics.buildtools)
 	testImplementation(libs.junit)
 	androidTestImplementation(libs.androidx.junit)
 	androidTestImplementation(libs.androidx.espresso.core)
@@ -57,4 +63,8 @@ dependencies {
 	debugImplementation(libs.androidx.ui.tooling)
 	debugImplementation(libs.androidx.ui.test.manifest)
 	implementation("androidx.compose.runtime:runtime-livedata:1.8.3")
+
+
+	implementation("androidx.room:room-runtime:2.7.2")
+	ksp("androidx.room:room-compiler:2.7.2")
 }
